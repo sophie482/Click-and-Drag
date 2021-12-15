@@ -26,9 +26,8 @@ class Rectangle:
         self.w = w
         self.h = h
 
-    def makeRectangles():
-        for i in range(0, 10):
-            rectangles.append(Rectangle(random.randint(0, width), random.randint(0, height), 20, 20))
+    def makeRectangles(self):
+        rectangles.append(pygame.Rect(self.x, self.y, self.w, self.h))
 
     def draw():
         for i in range(len(rectangles)):
@@ -36,7 +35,9 @@ class Rectangle:
 
 def main():
     done = False
-    Rectangle.makeRectangles()
+    for i in range(0, 10):
+        Rectangle.makeRectangles(Rectangle(random.randint(0, height), random.randint(0, width), 20, 20))
+
     rectDragging = False
     while not done:
 
