@@ -58,9 +58,10 @@ def main():
 
             if event.type == pygame.MOUSEMOTION:
                 if rectDragging:
-                    rXMousePos, rYMousePos = event.pos
-                    rectangles[i].x = rXMousePos + rOffsetX
-                    rectangles[i].y = rYMousePos + rOffsetY
+                    for i in range(len(rectangles)):
+                        rXMousePos, rYMousePos = event.pos
+                        rectangles[i].x = rXMousePos + rOffsetX
+                        rectangles[i].y = rYMousePos + rOffsetY
 
         screen.fill(WHITE)
 
